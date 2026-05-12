@@ -11,13 +11,14 @@ img, svg{
 }
 
 
-/* | =========== HOMEPAGE & TOP 30 =========== |  */
+/* | =========== HOMEPAGE 🏡 & TOP 30 =========== |  */
 
 
 body{
   margin:0;
   /* police générale des deux pages */
   font-family: "Oswald", sans-serif;
+  background-image: url("../img/bg_pattern.png");
 }
 
 a{
@@ -30,7 +31,7 @@ a{
 }
 
 
-/* ===== MOBILE FIRST | PETIT ÉCRAN <= 770px 📱 =====  */
+/* ===== 📱 MOBILE FIRST | PETIT ÉCRAN <= 770px 📱 =====  */
 
 
 /* <!-- ===== BARRE DE NAVIGATION ===== --> */
@@ -84,8 +85,6 @@ a{
 .nav-wide-links{
   display: none;
 }
-
-
 
 /* <!-- ===== CONTENEUR CARTES DE LA HOMEPAGE EN GRID ===== --> */
 .cards-container-home{
@@ -203,17 +202,12 @@ a{
   background-color: rgba(0, 0, 0, 0.465);
 }
 
-
-
-
 /* <!-- ===== PIED-DE-PAGE / FOOTER ===== --> */
 
 footer{
   /* police footer */
   font-family: "Libre Baskerville", serif;
   font-size: 0.7rem;
-  /* image de fond */
-  background-image: url("../img/bg_pattern.png");
   /* padding latéral de 2rem */
   padding: 3rem 2rem;
   /* affichage en grille */
@@ -245,36 +239,64 @@ footer a{
   margin-bottom: 0.2rem;
 }
 
+/* <!-- ==== FORMULAIRE NEWSLETTER ==== --> */
+#email-form{
+  /* enlever le gap entre l'input et le submit */
+  display: flex;
+}
+
+/* <!-- ==== INPUT DE L'E-MAIL UTILISATEUR-CE ==== --> */
+.input-box{
+  padding: 1rem;
+  /* police = Baskerville  */
+  font-family: inherit;
+}
+
+/* <!-- ==== BOUTON DE SOUMISSION E-MAIL ==== --> */
+.submit{
+  color:white;
+  background-color: black;
+  padding: 1rem;
+  font-weight: bolder;
+}
+
+/* <!-- ==== RÉSEAUX SOCIAUX ==== --> */
+.socials{
+  display: flex;
+  gap: 0.5rem;
+  /* move purement visuel concernant la marge latérale */
+  margin: 1rem 0.2rem; 
+}
+
+/* sélection de chaque réseau par id (pas de classe) - effet de survol coloré*/
+
+#ig:hover{
+  color:lightpink
+}
+
+#x-twit:hover{
+  color:lightskyblue;
+}
+
+#fb:hover{
+  color:lightsalmon;
+}
+
+#ptrst:hover{
+  color:lightseagreen;
+}
+
+#tiktok:hover{
+  color:lightgreen
+}
+
+/* ol special */
+#yt:hover{
+  color:crimson;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===== TABLET | MEDIUM SCREEN > 770px 👩‍💻 =====  */
+/* ===== 👩‍💻 TABLET | MEDIUM SCREEN > 770px 👩‍💻 =====  */
 
 @media screen and (min-width: 770px) {
   
@@ -283,10 +305,26 @@ footer a{
     display: none;
   }
   
+  /* <!-- ===== 8 PETITES CARTES =====  --> */
+  .small-card-home{
+    display: grid;
+    /* 4 cartes */
+    grid-column: span 3;
+    /* permettre le positionnement du texte enfant */
+    position: relative;
+  }
+  
+  /* <!-- ===== 3 GRANDES CARTES =====  --> */
+  .big-card-home{
+    display: grid;
+    /* 3 cartes */
+    grid-column: span 4;
+    /* permettre le positionnement du texte enfant */
+    position: relative;
+  }
 }
 
-
-/* ===== DESKTOP | LARGE & WIDESCREEN  >= 1024px 🖥️ =====  */
+/* ===== 🖥️ DESKTOP | LARGE & WIDESCREEN  >= 1024px 🖥️ =====  */
 
 @media screen and (min-width: 1024px) {
   
@@ -295,11 +333,162 @@ footer a{
     display: none;
   }
   
+  /* <!-- ===== BARRE DE NAVIGATION ===== --> */
+  .nav-home{
+    /* plus fixée - reste au-dessus des éléments du shop */
+    position: absolute;
+    width: 100%;
+    /* fond transparent */
+    background: transparent;
+    display: flex;
+    /* éléments tiennent sur une ligne */
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 50px;
+    /* espace entre les liens */
+    gap: 20px;
+    /* toujours visible */
+    z-index: 3;
+  }
   /* <!-- ===== LIENS DE LA NAV VISIBLES EN LARGESCREEN =====  --> */
   .nav-wide-links{
-    
     display: flex;
-    
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
   }
   
+  /* <!-- ===== LOGO CLIQUABLE - LIEN HOMEPAGE =====  --> */
+  .logo-sezane-link{
+    display: flex;
+    padding:0; 
+    margin:0;
+    align-items: center;
+    /* espace entre le logo et le reste des liens (100-20) */
+    margin-right: 80px;
+  }
+  
+  #logo-sezane{
+    fill: rgb(255, 255, 255);
+  }
+  
+  .cards-container-home{
+    /* suppression du padding pour affichage correct de la nav */
+    padding-top: 0;
+  }
+  
+  footer{
+    /* largeur max */
+    max-width: 1300px;
+    /* centrage horizontal */
+    margin: 0 auto;
+  }
+}
+
+
+/* =========== |TOP 30 SPECIALS| 🤠 =========== */
+
+
+/* <!-- ===== BARRE DE NAVIGATION ===== --> */
+.nav-top30{
+  position: fixed;
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  padding: 15px 0;
+  z-index: 3; 
+}
+
+/* <!-- ========== CONTENEUR PAGE TOP 30  ========== --> */
+.container-top30{
+  /* largeur maximale */
+  max-width: 1300px;
+  /* sous 1300px */
+  width: 100%;
+  /* centrage contenu */
+  margin: 0 auto;
+  padding: 3rem 0;
+  /* centrage des textes */
+  text-align: center;
+  /* tous les textes sont en lettres capitales */
+  text-transform: uppercase;
+}
+
+/* <!-- ========== 6 CARTES PRODUITS CHAPEAU ========== --> */
+.container-cards-top30{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  /* espace estimé entre les cartes */
+  gap: 1rem;
+}
+
+.card-top30-big{
+  /* 2 cartes par ligne */
+  grid-column: span 6;
+}
+
+.card-top30-small{
+  /* 2 cartes par ligne */
+  grid-column: span 6;
+}
+
+.container-top30 h2{
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.container-cards-top30 span{
+  /* texte en évidence */
+  font-weight: 600;
+}
+
+.container-cards-top30 img{
+  /* aligne et conserve la proportion des img */
+  aspect-ratio: 3 / 4;
+} 
+
+
+/* ===== 👩‍💻 TABLET | MEDIUM SCREEN > 770px 👩‍💻 =====  */
+
+@media screen and (min-width: 770px) {
+  
+  /* ========== 2 GRANDES CARTES ==========   */
+  .card-top30-big{
+    grid-column: span 6;
+  }
+  /* ========== 4 PETITES CARTES ==========   */
+  .card-top30-small{
+    grid-column: span 3;
+  }
+}
+
+/* ===== 🖥️ DESKTOP | LARGE & WIDESCREEN  >= 1024px 🖥️ =====  */
+
+@media screen and (min-width: 1024px) {
+  
+  .nav-top30{
+    /* navbar plus fixée */
+    position: relative; 
+    display: flex;
+    /* éléments tiennent sur une ligne */
+    flex-wrap: nowrap;
+    justify-content: center; 
+    align-items: center;
+    /* espace entre les liens */
+    gap: 20px;
+    padding: 20px 50px;
+  }
+  
+  /* couleur des liens sur cette page */
+  .nav-top30 a{
+    color:black;
+  }
+  
+  /* couleur du logo sur cette page */
+  #logo-sezane-top30{
+    fill: black; 
+  }
 }
