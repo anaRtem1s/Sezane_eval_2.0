@@ -1,0 +1,18 @@
+INSTRUCTIONS : https://docs.google.com/document/d/1ECX5i_DwVBHXSSk_WQVm-k0XYE2ld3XpeJfAatymcuE/edit?tab=t.0
+
+SCREENSHOTS : https://drive.google.com/file/d/1q10mIGvxuz12rsxm64D5QZ-H7b6WyJ9z/view
+
+
+Attention, sur le screenshot 770px de la homepage, les 3 images sont placées les unes sous les autres alors que, à partir de là (dans le brief c'est écrit comme ça) les 3 dernières cartes doivent être côte à côte (de 770px jusqu'à l'infini)
+
+ 
+  <!-- ------- BASKERVILLE ------- -->
+
+    <!-- ------- OSWALD ------- -->
+
+
+==============================================================
+
+site officiel : https://www.sezane.com/eu-fr
+
+
