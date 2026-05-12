@@ -5,18 +5,301 @@
 }
 
 img, svg{
-  display:block;
-  max-width:100%;
-  height:auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
+
+
+/* | =========== HOMEPAGE & TOP 30 =========== |  */
+
 
 body{
   margin:0;
+  /* police générale des deux pages */
+  font-family: "Oswald", sans-serif;
 }
 
-.center-position{
+a{
+  /* aucun lien souligné */
+  text-decoration: none;
+  /* liens en lettres capitales partout */
+  text-transform: uppercase;
+  /* override la couleur par défaut des liens */
+  color: inherit;
+}
+
+
+/* ===== MOBILE FIRST | PETIT ÉCRAN <= 770px 📱 =====  */
+
+
+/* <!-- ===== BARRE DE NAVIGATION ===== --> */
+.nav-home{
+  /* fixée en top */
+  position: fixed;
+  width: 100%;
+  /* image de fond */
+  background-image: url("../img/bg_pattern.png");
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  /* toujours visible */
+  z-index: 3;
+}
+
+/* <!-- ===== MENU BURGER MOBILE & TABLET ===== --> */
+.burger-menu{
   position: absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50% );
+  left: 20px;
+  top: 20px;
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  display: flex;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+}
+
+/* <!-- ===== LOGO CLIQUABLE - LIEN HOMEPAGE =====  --> */
+.logo-sezane-link{
+  display: block;
+  width: 120px;
+  /* centrage du logo */
+  margin: 0 auto;
+}
+
+#logo-sezane{
+  fill: black;
+}
+
+/* <!-- ===== LIENS DE LA NAV CACHÉS MOBILE / TABLET =====  --> */
+.nav-wide-links{
+  display: none;
+}
+
+
+
+/* <!-- ===== CONTENEUR CARTES DE LA HOMEPAGE EN GRID ===== --> */
+.cards-container-home{
+  display: grid;
+  /* 12 parts égales, dénominateur commun RD */
+  grid-template-columns: repeat(12, 1fr);
+  /* éviter le crop des images au-dessus */
+  padding-top: 70px;
+}
+
+/* <!-- ===== 8 PETITES CARTES =====  --> */
+.small-card-home{
+  display: grid;
+  /* 2 cartes */
+  grid-column: span 6;
+  /* permettre le positionnement du texte enfant */
+  position: relative;
+}
+
+/* <!-- ===== 3 GRANDES CARTES =====  --> */
+.big-card-home{
+  display: grid;
+  /* 1 carte */
+  grid-column: span 12;
+  /* permettre le positionnement du texte enfant */
+  position: relative;
+}
+
+/* <!-- ===== TEXTE DES CARTES DE LA HOMEPAGE =====  --> */
+.cards-home-txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* texte blanc */
+  color:white;
+  font-size: 0.8rem;
+}
+
+.cards-container-home img{
+  /* uniformisation | enlever le gap entre toutes les cartes */
+  width: 100%;
+  height: 100%;
+}
+
+
+/* <!-- ===== LOOKBOOK - COLLECTION PRINTEMPS ===== --> */
+.lookbook{
+  /* prend toute la hauteur de l'écran */
+  height: 100vh;
+  /* pour pouvoir appliquer le ::before et le centrage du texte */
+  position: relative;
+}
+
+/* <!-- ===== IMAGE DE FOND ===== --> */
+.lookbook img{
+  width: 100%;
+  height: 100%;
+  /* positionnement couvrant de l'image */
+  object-fit: cover;
+}
+
+/* <!-- ===== TEXTE ===== --> */
+.lookbook-txt{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* texte prend toute la largeur dispo */
+  width: 100%;
+  color: white;
+}
+
+/* TITRE */
+.lookbook h2{
+  text-transform: uppercase;
+  /* enlever espace entre titre et bouton */
+  margin: 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+/* ==== BOUTON ===== */
+.lookbook-btn{
+  /* display: flex;
+  flex-wrap: nowrap; 
+  align-items: center;
+  justify-content: center;  */
+  border: 1px solid white;
+  padding: 0.5rem 1.5rem;
+}
+
+/* SURVOL BOUTON */
+.lookbook-btn:hover{
+  background-color: rgba(255, 255, 255, 0.508);
+  /* élargissement du bouton avec transition */
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* FILTRE NOIR LOOKBOOK */
+.lookbook::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* rend le filtre visible */
+  width: 100%;
+  height: 100%;
+  /* transparence */
+  background-color: rgba(0, 0, 0, 0.465);
+}
+
+
+
+
+/* <!-- ===== PIED-DE-PAGE / FOOTER ===== --> */
+
+footer{
+  /* police footer */
+  font-family: "Libre Baskerville", serif;
+  font-size: 0.7rem;
+  /* image de fond */
+  background-image: url("../img/bg_pattern.png");
+  /* padding latéral de 2rem */
+  padding: 3rem 2rem;
+  /* affichage en grille */
+  display: grid;
+  /* formule magique RD 4 enfants */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* gap de 2rem */
+  gap: 2rem;
+}
+
+/* 4 PARTIES DU FOOTER (ENFANTS)  */
+.footer-section{
+  display: flex;
+  /* nouvelle ligne pour chaque lien */
+  flex-direction: column;
+}
+
+.footer-section h3{
+  text-transform: uppercase;
+}
+
+.footer-section h4{
+  margin-bottom: 0.2rem;
+}
+
+/* LIENS DU FOOTER PAS EN LETTRES CAPITALES */
+footer a{
+  text-transform: none;
+  margin-bottom: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== TABLET | MEDIUM SCREEN > 770px 👩‍💻 =====  */
+
+@media screen and (min-width: 770px) {
+  
+  /* <!-- ===== LIENS DE LA NAV CACHÉS =====  --> */
+  .nav-wide-links{
+    display: none;
+  }
+  
+}
+
+
+/* ===== DESKTOP | LARGE & WIDESCREEN  >= 1024px 🖥️ =====  */
+
+@media screen and (min-width: 1024px) {
+  
+  /* <!-- ===== MENU BURGER MOBILE CACHÉ EN LARGESCREEN===== --> */
+  .burger-menu{
+    display: none;
+  }
+  
+  /* <!-- ===== LIENS DE LA NAV VISIBLES EN LARGESCREEN =====  --> */
+  .nav-wide-links{
+    
+    display: flex;
+    
+  }
+  
 }
